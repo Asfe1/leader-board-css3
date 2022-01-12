@@ -86,13 +86,20 @@ align-items: center;
 /*--------------------------
      cousese Styles
      ----------------- */
-.couse-banner img{
+    .courses{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-column-gap: 24px;
+    }
+.course-banner img{
         width: 224px;
         height: 104px; 
 }
 .course-info
 {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .fa-star{
        font-size: 12px;
@@ -104,3 +111,45 @@ align-items: center;
          color: #AEAEAE;
          opacity: 0.25;
 }
+
+/*----------------
+     Media Queries
+ ----------------- */
+
+ @media only screen and (max-width:688px){
+    .section-title{
+        text-align: center;
+        }
+     .container{
+         width: 100%;
+     }
+     .players , .blogs ,.courses{
+         grid-template-columns: repeat(1,1fr);
+     }
+     .player{
+         flex-direction: column;
+         justify-content: center;
+     }
+     .blog{
+         flex-direction: column;
+     }
+    
+   
+ }
+
+ /* tablet deices */
+
+ @media only screen and (min-width:688px) and (max-width:992px)
+     {
+        .container{
+            width: 100%;
+        }
+
+        .players, .courses {
+            grid-template-columns: repeat(2,1fr);
+        }
+        .blogs {
+            grid-template-columns: repeat(1,1fr);
+        }
+
+     }
